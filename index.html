@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script src="calcularFecha.js"></script>
+
   <script src="errorvacio.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,26 +24,29 @@
   </style>
 </head>
 <body>
+  
   <div class= "Contenedorprincipal">
     <form class="formularioprincipal" action=""onsubmit="return validarFormulario()">
       <div class="campo">
       <label id="formday" for="formday">DAY</label>
-      <input type="text" id="formday" class="myinput" onkeyup="makeBoldAndBlack()" name="formday" placeholder="DD " required ">
+      
+      <input type="number"  min="1" max="31" id="formday" class="myinput"  onkeyup="makeBoldAndBlack()" name="formday" placeholder="DD " required>
       <p class="errorvacio">This field is required.</p>
     </div>
     <div class="campo">
       <label id="formmonth" for="formmonth">MONTH</label>
-      <input type="text" id="formmonth" class="myinput" onkeyup="makeBoldAndBlack()" name="formmonth" placeholder="MM " required>
+      <input type="number"  min="1" max="12" id="formmonth"  class="myinput"  onkeyup="makeBoldAndBlack()" name="formmonth" placeholder="MM " required>
       <p class="errorvacio">This field is required.</p>
     </div>
     <div class="campo">
       <label id="formyear" for="year">YEAR</label>
-      <input type="text" id="formyear" class="myinput" name="formyear" placeholder="YY " required>
+      <input type="number"  min="1900" max="31" id="formyear"  class="myinput" name="formyear" onkeyup="makeBoldAndBlack()" placeholder="YY " required>
       <p class="errorvacio">This field is required.</p>
     </div>
     </form>
-    <hr style="height: 20px; background-color: black; border: none;">   
-    <button type="submit" class="boton-enviar">
+    <hr>
+
+    <button type="submit" class="boton-enviar" onclick="calcularEdad()">
       
       <svg xmlns="http://www.w3.org/2000/svg" width="46" height="44" viewBox="0 0 46 44">
         <g fill="none" stroke="#FFF" stroke-width="2" width="400px" height="400px">
@@ -50,24 +55,17 @@
       </svg>
     
     </button>
-    <script src="negrita.js"></script>
-<script>
-const inputs = document.querySelectorAll('#formday, #formmonth, #formyear');
+    <p id="anios">--</p>
+    <p id="meses">--</p>
+    <p id="dias">--</p>
 
-inputs.forEach((input) => {
-  console.log(input.name);
-  input.addEventListener('focus', (event) => {
-    event.target.style.borderColor = 'hsl(259, 100%, 65%)';
-  });
+    <script src="negrita.js"></script><
 
-  input.addEventListener('blur', (event) => {
-    event.target.style.borderColor = '#ccc';
-  });
-}); 
-</script>
 
 </div>
+<hr>
 </body>
+
 
 
 </html>
