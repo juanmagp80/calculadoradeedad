@@ -1,17 +1,196 @@
-body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background-color: hsl(0, 0%, 86%);
+.container {
+    
+    margin-top: 100px;
+    margin-right: 20px;
+	margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+
+
+  text-align: left;
 }
 
 
-.Contenedorprincipal{
+}
+
+
+
+.container input[type="number"]::-webkit-inner-spin-button,
+.container input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.container input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+
+
+
+.label {
+  font-family: "Poppins", sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  color: hsl(0, 1%, 44%);
+    margin-left: 20px;
+    margin-top: -320px;
+    padding-right: 170px;
+    
+    display: flex;
+
+}
+
+#dia,
+#mes,
+#anio {
+
+  box-sizing: border-box;
+  border-radius: 5px;
+  
+  box-sizing: border-box;
+  
+  
+  font-weight: 700;
+  color: hsl(0, 1%, 44%);
+  
+
+  border: 0.5px solid hsl(0, 0%, 86%);;
+    font-size: 40px;
+    font-weight: 700;    
+    color: hsl(0, 1%, 44%);
+    
+  
+}
+
+.container input[type="number"]::-webkit-inner-spin-button,
+.container input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.container input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+#dia{
+    margin-left:-80px;
+    width: 150px;
+
+}
+#mes{
+    margin-left:-90px;
+    width: 150px;
+
+}
+#anio{
+    margin-left:-80px;
+    width: 150px;
+}
+#mes-label.label {
+      margin-left: -60px;
+
+  /* Otros estilos que desees agregar */
+}
+#anio-label.label {
+      margin-left: -50px;
+      
+
+  /* Otros estilos que desees agregar */
+}
+#dia-label.label {
+    margin-left:-40px;
+
+/* Otros estilos que desees agregar */
+}
+.errorvacio {
+    display: none;
+    color: red;
+    font-size: 14px;
+  }
+
+
+.boton-enviar svg {
+    margin-left: 89;
+  }
+  .boton-enviar {
+    position: absolute;
+    margin-top: -150px;
+    margin-left: 750px;
+    background-color: hsl(259, 100%, 65%);
+    border-radius: 50%;
+    display:flex;
+    height: 100px;
+    width: 100px;
+    padding: 10px;
+    align-items: center;
+  
+    justify-content: center;
+  }
+
+  hr {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 1px; /* grosor de la línea */
+    background-color: black; /* color de la línea */
+    border: none; /* quita el borde */
+    margin: 10px 0; /* margen superior e inferior */
+    margin-top: -100px;
+    margin-left: 420px;
+    width: 50%;
+  }
+
+.resultados {
+    position: absolute;
+ margin-top: 250px;
+
+ margin-left: -540px;
+ font-size: 70px;
+   font-weight: 700;
+   
+   color: hsl(259, 100%, 65%);
+   font-family: "Poppins", sans-serif;
+
+   display: flex;
+  flex-direction: column;
+}
+
+.pareja {
+    position: relative;
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    margin-right: 80px;
+}
+
+#anios-texto, #meses-texto, #dias-texto {
+    font-weight: bold;
+    color: black;
+    font-family: "Poppins", sans-serif;
+    margin-left: 10px;
+  }
+
+  #dias,
+  #meses,
+  #anios {
+    margin-right: 40px;
+  }
+  #dias{
+    margin-left: -40px;
+  }
+  #meses{
+    margin-left: 20px;
+  }
+  .Contenedorprincipal{
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 50%; 
+    width: 60%; 
     height: 70vh;/* Opcional, establece el ancho del div principal */
     flex-direction: row;
 		
@@ -23,305 +202,66 @@ body {
 			opacity: 0.9;
             transition: transform 0.3s ease-in-out;
 } 
-.formularioprincipal {
-  position: absolute;
-  margin-left: 80px;
-  margin: auto;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: hsl(0, 0%, 86%);
 }
 
-.formularioprincipal .campo .myinput {
-   position: absolute; 
-  padding: 25px;
-  margin-bottom: 0px;
-   
-    box-sizing: border-box;
-    border-radius: 5px;
+/* Para pantallas con un ancho de hasta 600px */
+@media screen and (max-width: 600px) {
+    .container {
+      margin-top: 20px;
+      margin-right: 0;
+      margin-bottom: 20px;
+      text-align: center;
+    }
     
-    box-sizing: border-box;
-    margin: auto;
-   
-    border: 0.5px solid ;
-    font-size: 20px;
-    font-weight: 700;    
-    color: hsl(0, 1%, 44%);
-    width: 800px;
-  margin: 5px;
-}
-
-.formularioprincipal #formday label {
-    display: block; /* muestra la etiqueta en una línea separada */
-    margin-bottom: 5px;
-    margin-top:20px; 
-    font-family:"Poppins", sans-serif;
-    font-size: 30px;
-    font-weight: 700;
-    color: hsl(0, 1%, 44%)
- 
-  }
-
-.formularioprincipal  #formday{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 50px;
-  }
-
-  .formularioprincipal #formyday .myinput {
-    padding: 10px;
-   margin:0;
-    box-sizing: border-box;
-    border-radius: 5px;
-    width: 30%;
-    box-sizing: border-box;
-    margin-bottom: 20px;
-    margin-top: 5px;
-    border: 0.5px solid hsl(0, 0%, 86%);
-    font-size: 40px;
-    font-weight: 700;
-    color: hsl(0, 1%, 44%)
-}
-
-.formularioprincipal #formmonth label {
-    display: block; /* muestra la etiqueta en una línea separada */
-    margin-bottom: 5px; 
-    font-family:"Poppins", sans-serif;
-    font-size: 20px;
-    font-weight: 700;
-    color: hsl(0, 1%, 44%)
- 
-  }
-
-.formularioprincipal  #formmonth{
-    position: absolute;
-    margin-top: -440px;
-    margin-left: 200px;
-  }
-
-
-  .formularioprincipal #formonth .myinput {
-    padding: 25px;
-   
-    box-sizing: border-box;
-    border-radius: 5px;
-    width: 50%;
-    box-sizing: border-box;
-    margin-bottom: 20px;
-    margin-top: 5px;
-    border: 0.5px solid hsl(0, 0%, 86%);
-    font-size: 40px;
-    font-weight: 700;
-    color: hsl(0, 1%, 44%)
-}
-
-.formularioprincipal #formyear label {
-    display: block; /* muestra la etiqueta en una línea separada */
-    margin-bottom: 5px; 
-    font-family:"Poppins", sans-serif;
-    font-size: 20px;
-    font-weight: 700;
-    color: hsl(0, 1%, 44%)
- 
-  }
-
-.formularioprincipal  #formyear{
-    position: absolute;
-    margin-top: -440px;
-    margin-left: 800px;
-  }
-
- 
-
-  input:focus {
-    outline: none;
-    border-color: hsl(259, 100%, 65%);
+    .label {
+      font-size: 30px;
+      margin-left: 0;
+      padding-right: 0;
+    }
     
-}
-.errorvacio {
-  display: none;
-  color: red;
-  font-size: 14px;
-}
-.formularioprincipal #formday,
-.formularioprincipal #formmonth,
-.formularioprincipal #formyear {
-  position: relative;
-  margin: 0 auto;
-  width: 50%;
-  margin-bottom: 20px;
-}
-
-.campo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 0 7px; /* Agrega un margen a cada campo para separarlos */
-  width: 250px; 
-  margin-top: -440px;
-  padding-left: -600px !important;/* Ajusta el ancho de cada campo */
-}
-
-.campo label {
-  margin-bottom: 5px; 
-  font-family:"Poppins", sans-serif;
-  font-size: 20px;
-  font-weight: 700;
-  color: hsl(0, 1%, 44%);
-}
-
-.campo .myinput {
-  padding: 25px;
-  box-sizing: border-box;
-  border-radius: 5px;
-  width: 100%;
-  box-sizing: border-box;
-  margin-bottom: 20px;
-  margin-top: 5px;
-  border: 0.5px solid ;
-  font-size: 40px;
-  font-weight: 700;    
-  color: hsl(0, 1%, 44%);
-}
-
-
-
-.boton-enviar {
-  position: absolute;
-  margin-top: -150px;
-  margin-left: 700px;
-  background-color: hsl(259, 100%, 65%);
-  border-radius: 50%;
-  display:flex;
-  height: 100px;
-  width: 100px;
-  padding: 10px;
-  align-items: center;
-
-  justify-content: center;
-}
-
-hr {
-  position: absolute;
-  left: 0;
-  right: 0;
-  height: 1px; /* grosor de la línea */
-  background-color: black; /* color de la línea */
-  border: none; /* quita el borde */
-  margin: 10px 0; /* margen superior e inferior */
-  margin-top: -140px;
-  margin-left: 600px;
-  width: 34%;
-}
-
-.boton-enviar svg {
-  margin-left: 89;
-}
-
-#resultado-edad {
-  position: absolute;
-  display: flex;
-  font-family: 'Poppins';
-  font-size: 60px;
-  font-weight: 900;
-  padding: 20px;
-  margin-top: 220px;
-  margin-right: 10px;
-  text-align: left;
-}
-#anios {
-
-
-
-}
-#resultado-edad #contenedormonths #meses {
-  position: absolute;
-  padding: 10px;
-  margin:0;
-  margin-left: -110px;
+    #dia,
+    #mes,
+    #anio {
+      margin: 10px auto;
+      width: 80%;
+      font-size: 30px;
+    }
+    
+    .boton-enviar {
+      margin: 20px auto;
+      margin-left: 0;
+    }
+    
+    hr {
+      margin-top: 50px;
+      margin-left: 10%;
+      width: 80%;
+    }
+    
+    .resultados {
+      margin-top: 50px;
+      margin-left: 0;
+      font-size: 50px;
+    }
+    
+    .pareja {
+      margin-right: 0;
+    }
+    
+    #anios-texto, #meses-texto, #dias-texto {
+      font-size: 20px;
+    }
+    
+    #dias,
+    #meses,
+    #anios {
+      margin-right: 10px;
+    }
+  }
   
-  
-   width: 30%;
-
-   margin-bottom: 20px;
-   margin-top: 12px;
-border: none;
-   font-size: 40px;
-   font-weight: 700;
-   
-   color: hsl(259, 100%, 65%);
-}
-
-
-#resultado-edad #contenedordays #dias {
-  position: absolute;
-  padding: 10px;
-  margin:0;
-  margin-left: -110px;
-  
-  
-   width: 30%;
-
-   margin-bottom: 20px;
-   margin-top: 12px;
-border: none;
-   font-size: 40px;
-   font-weight: 700;
-   
-   color: hsl(259, 100%, 65%);
-}
-#resultado-edad #contenedoryears #anios {
-  position: absolute;
-  padding: 10px;
-  margin:0;
-  margin-left: -110px;
-  
-  
-   width: 30%;
-
-   margin-bottom: 20px;
-   margin-top: 12px;
-border: none;
-   font-size: 40px;
-   font-weight: 700;
-   
-   color: hsl(259, 100%, 65%);
-}
-#dias{
-position: absolute;
-  font-size: 70px;
-  margin-left: -540px;
-  font-size: 40px;
-   font-weight: 700;
-   
-   color: hsl(259, 100%, 65%);
-}
-
-#anios{
-  margin-top: 180px;
-  font-size: 40px;
-  margin-left: -690px;
-  font-size: 40px;
-   font-weight: 700;
-   
-   color: hsl(259, 100%, 65%);
-  
-
-}
-
-
-#meses{
-  margin-top: 350px;
-  font-size: 40px;
-  margin-left: 220px;
-  font-size: 40px;
-   font-weight: 700;
-   
-   color: hsl(259, 100%, 65%);
-  
-
-}

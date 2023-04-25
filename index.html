@@ -1,71 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <script src="calcularFecha.js"></script>
-
-  <script src="errorvacio.js"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+	<title>Calculadora de Edad</title>
+	<style>
+		.attribution { font-size: 11px; text-align: center; }
+		.attribution a { color: hsl(228, 45%, 44%); }
+	  </style>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="style.css">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Age calculator app</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
 <body>
-  
-  <div class= "Contenedorprincipal">
-    <form class="formularioprincipal" action=""onsubmit="return validarFormulario()">
-      <div class="campo">
-      <label id="formday" for="formday">DAY</label>
-      
-      <input type="number"  min="1" max="31" id="formday" class="myinput"  onkeyup="makeBoldAndBlack()" name="formday" placeholder="DD " required>
-      <p class="errorvacio">This field is required.</p>
-    </div>
-    <div class="campo">
-      <label id="formmonth" for="formmonth">MONTH</label>
-      <input type="number"  min="1" max="12" id="formmonth"  class="myinput"  onkeyup="makeBoldAndBlack()" name="formmonth" placeholder="MM " required>
-      <p class="errorvacio">This field is required.</p>
-    </div>
-    <div class="campo">
-      <label id="formyear" for="year">YEAR</label>
-      <input type="number"  min="1900" max="31" id="formyear"  class="myinput" name="formyear" onkeyup="makeBoldAndBlack()" placeholder="YY " required>
-      <p class="errorvacio">This field is required.</p>
-    </div>
-    </form>
-    <hr>
+<div class= "Contenedorprincipal">
+	<form>
+		<div class="row">
+			<div class="col">
+				<label class="label" id="dia-label"for="dia">DIA</label>
+				<input type="number" id="dia" class="myinput" onkeyup="makeBoldAndBlack()" name="dia" min="1" max="31">
+			</div>
+			<div class="col">
+				<label class="label" id="mes-label" for="mes">MES</label>
+				<input type="number" id="mes" class="myinput" onkeyup="makeBoldAndBlack()" name="mes" min="1" max="12">
+			</div>
+			<div class="col">
+				<label class="label"id="anio-label" for="anio">AÑO</label>
+				<input type="number" id="anio" class="myinput" onkeyup="makeBoldAndBlack()" name="anio" min="1900" max="9999">
+			</div>
+		</div>
+		<p class="errorvacio">This field is required.</p>
+		<hr>
+		<button type="button" class="boton-enviar" onclick="calcularEdad(); validarFormulario()">
+		<svg xmlns="http://www.w3.org/2000/svg" width="46" height="44" viewBox="0 0 46 44">
+			<g fill="none" stroke="#FFF" stroke-width="2" width="400px" height="400px">
+			  <path d="M1 22.019C8.333 21.686 23 25.616 23 44M23 44V0M45 22.019C37.667 21.686 23 25.616 23 44"/>
+			</g>
+		  </svg>
+		</button>
+		<script src="negrita.js"></script>
+		<script src="colorborde.js"></script>
 
-    <button type="submit" class="boton-enviar" onclick="calcularEdad()">
-      
-      <svg xmlns="http://www.w3.org/2000/svg" width="46" height="44" viewBox="0 0 46 44">
-        <g fill="none" stroke="#FFF" stroke-width="2" width="400px" height="400px">
-          <path d="M1 22.019C8.333 21.686 23 25.616 23 44M23 44V0M45 22.019C37.667 21.686 23 25.616 23 44"/>
-        </g>
-      </svg>
-    
-    </button>
-    <p id="anios">--</p>
-    <p id="meses">--</p>
-    <p id="dias">--</p>
-
-    <script src="negrita.js"></script><
-
-
+	</form>
+	<div class="resultados">
+		<div class="pareja">
+			<p id="anios">--</p>		
+			<p id="anios-texto">AÑOS</p>
+	</div>
+		<div class="pareja">
+			<p id="meses">--</p>
+			<p id="meses-texto">MESES</p>
+		</div>
+		<div class="pareja">
+			<p id="dias">--</p>
+			<p id="dias-texto">DIAS</p>
+		</div>
+		<script src="errorvacio.js"></script>
+		<script src="calcular.js"></script>
+	</div>
 </div>
-<hr>
 </body>
-
-
-
 </html>
