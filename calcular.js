@@ -9,6 +9,12 @@
     alert("Por favor, ingrese una fecha de nacimiento válida.");
     return;
   }
+   // Validar la fecha ingresada
+   var fecha = new Date(anio, mes - 1, dia);
+   if (fecha.getDate() != dia || fecha.getMonth() + 1 != mes || fecha.getFullYear() != anio) {
+	   alert("Por favor, ingrese una fecha de nacimiento válida.");
+	   return;
+   }
 
 
 			// Calcular la edad en milisegundos
